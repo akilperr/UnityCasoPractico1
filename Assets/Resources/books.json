@@ -1,0 +1,16 @@
+{
+  "books": [
+    {
+      "imageName": "alas_de_onix",
+      "titulo": "Alas de onix",
+      "topics": ["dragones", "fantasía", "romance", "escuela de guerra", "magia", "política"],
+      "labelColor": "#63666A"
+    },
+    {
+      "imageName": "asistente_del_villano",
+      "titulo": "Asistente del villano",
+      "topics": ["fantasía", "slowburn", "romance", "humor"],
+      "labelColor": "#6C7FD8"
+    }
+  ]
+}

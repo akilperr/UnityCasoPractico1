@@ -5,9 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/01 Pinguino.unity
+    guid: 1a91bc2e93e91b91ab63dda288c4730f
+  - enabled: 0
+    path: Assets/Scenes/02 Cubos.unity
+    guid: 84e641b111bc1bed5aa6f2d55d0e4800
+  - enabled: 0
+    path: Assets/Scenes/03 Prefab texto.unity
+    guid: 5ab360de5b3ec142a8ed4e7638967387
+  - enabled: 0
+    path: Assets/Scenes/04 Primero que funciona.unity
+    guid: 8d34f433c4a8c9f17977b016f438c7cc
+  - enabled: 0
+    path: Assets/Scenes/05 mejora de scripts.unity
+    guid: e93bd92f49b6ca9429aaaa39c6a7edcb
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/06 Cambio de color en las cajas.unity
+    guid: 2fbffab8e0bd3eb65bbc29a50ec2b136
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 435082e6a74101980ba700d36eb08923, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
