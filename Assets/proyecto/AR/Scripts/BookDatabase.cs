@@ -6,8 +6,18 @@ public class BookData
     public string bookId;
     public List<string> imageNames;
     public string titulo;
+    public string autor;
     public List<string> topics;
     public string labelColor;
+
+    public bool esAutoconclusivo;
+    public string saga;
+    public string tipoSaga;
+    public bool sagaTerminada;
+    public int numeroEnSaga;
+    public int totalLibrosSaga;
+    public string libroAnteriorId;
+    public string libroSiguienteId;
 }
 
 [System.Serializable]

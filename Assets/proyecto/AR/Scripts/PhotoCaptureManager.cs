@@ -5,8 +5,9 @@ using TMPro;
 
 public class PhotoCaptureManager : MonoBehaviour
 {
-    [Header("UI opcional que quieres ocultar durante la foto")]
-    public GameObject canvasUI;
+    [Header("UI que NO quieres que salga en la foto")]
+    public GameObject captureButton;
+    public GameObject infoButton;
 
     [Header("Texto opcional de feedback")]
     public TMP_Text feedbackText;
@@ -18,8 +19,12 @@ public class PhotoCaptureManager : MonoBehaviour
 
     private IEnumerator CaptureAndSave()
     {
-        if (canvasUI != null)
-            canvasUI.SetActive(false);
+        // Ocultamos solo los botones, no el panel de info
+        if (captureButton != null)
+            captureButton.SetActive(false);
+
+        if (infoButton != null)
+            infoButton.SetActive(false);
 
         yield return new WaitForEndOfFrame();
 
@@ -43,8 +48,12 @@ public class PhotoCaptureManager : MonoBehaviour
 
         Destroy(screenImage);
 
-        if (canvasUI != null)
-            canvasUI.SetActive(true);
+        // Volvemos a mostrar los botones
+        if (captureButton != null)
+            captureButton.SetActive(true);
+
+        if (infoButton != null)
+            infoButton.SetActive(true);
     }
 
     private IEnumerator HideFeedbackAfterDelay()

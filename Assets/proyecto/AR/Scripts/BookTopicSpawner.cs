@@ -279,4 +279,23 @@ public class BookTopicSpawner : MonoBehaviour
             b => b.imageNames != null && b.imageNames.Contains(imageName)
         );
     }
+
+    public BookData GetCurrentCenteredBook()
+    {
+        if (string.IsNullOrEmpty(currentCenteredBookId))
+            return null;
+
+        return GetBookById(currentCenteredBookId);
+    }
+
+    public BookData GetBookById(string bookId)
+    {
+        if (string.IsNullOrEmpty(bookId))
+            return null;
+
+        if (BookDataLoader.database == null || BookDataLoader.database.books == null)
+            return null;
+
+        return BookDataLoader.database.books.Find(b => b.bookId == bookId);
+    }
 }

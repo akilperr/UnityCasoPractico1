@@ -26,9 +26,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/07 Cambios en las formas.unity
     guid: b33bd5e959923c9ff9ae5295fda9abc3
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/08 C\xE1mara + t\xF3picos bonitos.unity"
     guid: 8aea206fe3182f326a8ce438fa57d806
+  - enabled: 1
+    path: Assets/Scenes/09 Mas Info.unity
+    guid: 929ac9884deadb012a0faf59ed52cff6
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 435082e6a74101980ba700d36eb08923, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
