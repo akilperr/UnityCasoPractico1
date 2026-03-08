@@ -1,16 +1,60 @@
 {
   "books": [
     {
-      "imageName": "alas_de_onix",
+      "bookId": "alas_de_onix",
+      "imageNames": ["alas_de_onix"],
       "titulo": "Alas de onix",
-      "topics": ["dragones", "fantasía", "romance", "escuela de guerra", "magia", "política"],
+      "topics": ["dragones", "romantasy", "escuela de guerra", "magia", "política"],
       "labelColor": "#63666A"
     },
     {
-      "imageName": "asistente_del_villano",
+      "bookId": "asistente_del_villano",
+      "imageNames": ["asistente_del_villano"],
       "titulo": "Asistente del villano",
-      "topics": ["fantasía", "slowburn", "romance", "humor"],
+      "topics": ["romantasy", "slowburn", "cozy", "humor"],
       "labelColor": "#6C7FD8"
+    },
+    {
+      "bookId": "quicksilver",
+      "imageNames": ["quicksilver1", "quicksilver2"],
+      "titulo": "Quicksilver",
+      "topics": ["fantasía", "mundos", "heroína fuerte", "destinos"],
+      "labelColor": "#3A6B7A"
+    },
+    {
+      "bookId": "brimstone",
+      "imageNames": ["brimstone1", "brimstone2"],
+      "titulo": "Brimstone",
+      "topics": ["fantasía", "mundos", "realeza", "destino"],
+      "labelColor": "#3A6B7A"
+    },
+    {
+      "bookId": "yumi_y_el_pintor_de_pesadillas",
+      "imageNames": ["yumi_y_el_pintor_de_pesadillas"],
+      "titulo": "Yumi y el pintor de pesadillas",
+      "topics": ["fantasía", "mundos", "realeza", "destino"],
+      "labelColor": "#3A6B7A"
+    },
+    {
+      "bookId": "el_principe_cruel",
+      "imageNames": ["el_principe_cruel1", "el_principe_cruel2"],
+      "titulo": "El principe cruel",
+      "topics": ["enemies to lovers", "slowburn", "realeza", "destino"],
+      "labelColor": "#3A6B7A"
+    },
+    {
+      "bookId": "el_rey_malvado",
+      "imageNames": ["el_rey_malvado1", "el_rey_malvado2"],
+      "titulo": "El rey malvado",
+      "topics": ["enemies to lovers", "slowburn", "realeza", "destino"],
+      "labelColor": "#3A6B7A"
+    },
+    {
+      "bookId": "la_reina_de_nada",
+      "imageNames": ["la_reina_de_nada1", "la_reina_de_nada2"],
+      "titulo": "La reina de nada",
+      "topics": ["enemies to lovers", "slowburn", "realeza", "destino"],
+      "labelColor": "#3A6B7A"
     }
   ]
 }

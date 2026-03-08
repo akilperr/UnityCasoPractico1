@@ -13,8 +13,8 @@ public class BookTopicSpawner : MonoBehaviour
     public GameObject topicPrefab;
 
     [Header("Ajustes visuales")]
-    public float topicRadius = 0.11f;
-    public float topicHeight = 0.03f;
+    public float topicRadius = 0.07f;
+    public float topicHeight = 0.02f;
     public float centerSelectionMaxDistance = 250f; // en píxeles aprox.
 
     // raíz de tópicos por libro
@@ -79,18 +79,16 @@ public class BookTopicSpawner : MonoBehaviour
     {
         string imageName = trackedImage.referenceImage.name;
 
-        if (spawnedRoots.ContainsKey(imageName))
-            return;
-
-        if (BookDataLoader.database == null || BookDataLoader.database.books == null)
-            return;
-
-        BookData book = BookDataLoader.database.books.Find(b => b.imageName == imageName);
+        BookData book = GetBookByImageName(imageName);
 
         if (book == null || book.topics == null || book.topics.Count == 0)
             return;
 
-        GameObject root = new GameObject("Topics_" + imageName);
+        // usamos bookId para evitar duplicados si varias portadas pertenecen al mismo libro
+        if (spawnedRoots.ContainsKey(book.bookId))
+            return;
+
+        GameObject root = new GameObject("Topics_" + book.bookId);
         root.transform.SetParent(trackedImage.transform);
         root.transform.localPosition = Vector3.zero;
         root.transform.localRotation = Quaternion.identity;
@@ -115,12 +113,9 @@ public class BookTopicSpawner : MonoBehaviour
             if (background != null)
             {
                 Renderer renderer = background.GetComponent<Renderer>();
-                if (renderer != null)
+                if (renderer != null && ColorUtility.TryParseHtmlString(book.labelColor, out Color parsedColor))
                 {
-                    if (ColorUtility.TryParseHtmlString(book.labelColor, out Color parsedColor))
-                    {
-                        renderer.material.color = parsedColor;
-                    }
+                    renderer.material.color = parsedColor;
                 }
             }
 
@@ -132,7 +127,7 @@ public class BookTopicSpawner : MonoBehaviour
         }
 
         root.SetActive(false);
-        spawnedRoots[imageName] = root;
+        spawnedRoots[book.bookId] = root;
     }
 
     private void UpdateCenteredBook()
@@ -143,7 +138,7 @@ public class BookTopicSpawner : MonoBehaviour
         if (mainCamera == null)
             return;
 
-        string bestImageName = null;
+        string bestBookId = null;
         float bestDistance = float.MaxValue;
 
         Vector2 screenCenter = new Vector2(Screen.width / 2f, Screen.height / 2f);
@@ -161,7 +156,6 @@ public class BookTopicSpawner : MonoBehaviour
 
             Vector3 screenPos = mainCamera.WorldToScreenPoint(trackedImage.transform.position);
 
-            // ignorar si está detrás de la cámara
             if (screenPos.z < 0)
                 continue;
 
@@ -172,33 +166,35 @@ public class BookTopicSpawner : MonoBehaviour
 
             if (distanceToCenter < bestDistance)
             {
-                bestDistance = distanceToCenter;
-                bestImageName = imageName;
+                BookData book = GetBookByImageName(imageName);
+                if (book != null)
+                {
+                    bestDistance = distanceToCenter;
+                    bestBookId = book.bookId;
+                }
             }
         }
 
-        // si no hay ninguno suficientemente centrado, ocultamos todos
-        if (bestImageName == null || bestDistance > centerSelectionMaxDistance)
+        if (bestBookId == null || bestDistance > centerSelectionMaxDistance)
         {
             currentCenteredImageName = null;
             SetOnlyOneRootVisible(null);
             return;
         }
 
-        currentCenteredImageName = bestImageName;
+        currentCenteredImageName = bestBookId;
         SetOnlyOneRootVisible(currentCenteredImageName);
     }
-
-    private void SetOnlyOneRootVisible(string imageNameToShow)
+    private void SetOnlyOneRootVisible(string bookIdToShow)
     {
         foreach (var kvp in spawnedRoots)
         {
-            string imageName = kvp.Key;
+            string bookId = kvp.Key;
             GameObject root = kvp.Value;
 
             if (root != null)
             {
-                root.SetActive(imageName == imageNameToShow);
+                root.SetActive(bookId == bookIdToShow);
             }
         }
     }
@@ -206,11 +202,26 @@ public class BookTopicSpawner : MonoBehaviour
     private void RemoveTopics(ARTrackedImage trackedImage)
     {
         string imageName = trackedImage.referenceImage.name;
+        BookData book = GetBookByImageName(imageName);
 
-        if (spawnedRoots.TryGetValue(imageName, out GameObject root))
+        if (book == null)
+            return;
+
+        if (spawnedRoots.TryGetValue(book.bookId, out GameObject root))
         {
             Destroy(root);
-            spawnedRoots.Remove(imageName);
+            spawnedRoots.Remove(book.bookId);
         }
+    }
+
+    // Para poder detectar varias portadas distintas
+    private BookData GetBookByImageName(string imageName)
+    {
+        if (BookDataLoader.database == null || BookDataLoader.database.books == null)
+            return null;
+
+        return BookDataLoader.database.books.Find(
+            b => b.imageNames != null && b.imageNames.Contains(imageName)
+        );
     }
 }

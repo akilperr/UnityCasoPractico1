@@ -3,7 +3,8 @@ using System.Collections.Generic;
 [System.Serializable]
 public class BookData
 {
-    public string imageName;
+    public string bookId;
+    public List<string> imageNames;
     public string titulo;
     public List<string> topics;
     public string labelColor;
