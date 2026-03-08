@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/07 Cambios en las formas.unity
     guid: b33bd5e959923c9ff9ae5295fda9abc3
   - enabled: 1
-    path: "Assets/Scenes/08 M\xE1s libros y varias portadas.unity"
+    path: "Assets/Scenes/08 C\xE1mara + t\xF3picos bonitos.unity"
     guid: 8aea206fe3182f326a8ce438fa57d806
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 435082e6a74101980ba700d36eb08923, type: 2}
