@@ -11,11 +11,11 @@ public class BookData
     public string labelColor;
 
     public bool esAutoconclusivo;
-    public string saga;
-    public string tipoSaga;
-    public bool sagaTerminada;
-    public int numeroEnSaga;
-    public int totalLibrosSaga;
+    public string serie;
+    public string tipoSerie;
+    public bool serieTerminada;
+    public int numeroEnSerie;
+    public int totalLibrosSerie;
     public string libroAnteriorId;
     public string libroSiguienteId;
     public List<string> otrosLibros;

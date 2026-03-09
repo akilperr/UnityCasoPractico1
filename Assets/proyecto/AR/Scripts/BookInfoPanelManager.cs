@@ -33,37 +33,92 @@ public class BookInfoPanelManager : MonoBehaviour
         if (currentBook == null)
             return;
 
+        infoPanel.SetActive(true);
+
+        titleText.gameObject.SetActive(true);
         titleText.text = currentBook.titulo ?? "Sin título";
 
-        // Estos campos vendrán de la API
+        authorText.gameObject.SetActive(true);
         authorText.text = "Autor: cargando...";
+
+        publisherText.gameObject.SetActive(true);
         publisherText.text = "Editorial: cargando...";
+
+        dateText.gameObject.SetActive(true);
         dateText.text = "Fecha: cargando...";
+
+        categoryText.gameObject.SetActive(true);
         categoryText.text = "Categoría: cargando...";
 
         if (currentBook.esAutoconclusivo)
         {
+            sagaText.gameObject.SetActive(true);
             sagaText.text = "Tipo: Autoconclusivo";
-            typeText.text = "";
-            statusText.text = "";
-            orderText.text = "";
-            previousText.text = "";
-            nextText.text = "";
-            otherBooksText.text = "";
+
+            typeText.gameObject.SetActive(false);
+            statusText.gameObject.SetActive(false);
+            orderText.gameObject.SetActive(false);
+            previousText.gameObject.SetActive(false);
+            nextText.gameObject.SetActive(false);
+            otherBooksText.gameObject.SetActive(false);
         }
         else
         {
-            sagaText.text = "Saga: " + (string.IsNullOrEmpty(currentBook.saga) ? "-" : currentBook.saga);
-            typeText.text = "Formato: " + (string.IsNullOrEmpty(currentBook.tipoSaga) ? "-" : currentBook.tipoSaga);
-            statusText.text = "Estado: " + (currentBook.sagaTerminada ? "Terminada" : "No terminada");
-            orderText.text = "Libro en saga: " + currentBook.numeroEnSaga + " de " + currentBook.totalLibrosSaga;
+            // Serie
+            if (!string.IsNullOrEmpty(currentBook.serie))
+            {
+                sagaText.gameObject.SetActive(true);
+                sagaText.text = "Serie: " + currentBook.serie;
+            }
+            else
+            {
+                sagaText.gameObject.SetActive(false);
+            }
 
+            // Tipo de serie
+            if (!string.IsNullOrEmpty(currentBook.tipoSerie))
+            {
+                typeText.gameObject.SetActive(true);
+                typeText.text = "Tipo de Serie: " + currentBook.tipoSerie;
+            }
+            else
+            {
+                typeText.gameObject.SetActive(false);
+            }
+
+            // Estado
+            statusText.gameObject.SetActive(true);
+            statusText.text = "Estado de Publicación: " + (currentBook.serieTerminada ? "Terminada" : "No terminada");
+
+            // Orden de lectura
+            orderText.gameObject.SetActive(true);
+            orderText.text = "Orden de lectura: " + currentBook.numeroEnSerie + " de " + currentBook.totalLibrosSerie;
+
+            // Libro anterior
             BookData previousBook = bookTopicSpawner.GetBookById(currentBook.libroAnteriorId);
+            if (previousBook != null)
+            {
+                previousText.gameObject.SetActive(true);
+                previousText.text = "Libro anterior: " + previousBook.titulo;
+            }
+            else
+            {
+                previousText.gameObject.SetActive(false);
+            }
+
+            // Libro siguiente
             BookData nextBook = bookTopicSpawner.GetBookById(currentBook.libroSiguienteId);
+            if (nextBook != null)
+            {
+                nextText.gameObject.SetActive(true);
+                nextText.text = "Siguiente Libro: " + nextBook.titulo;
+            }
+            else
+            {
+                nextText.gameObject.SetActive(false);
+            }
 
-            previousText.text = "Anterior: " + (previousBook != null ? previousBook.titulo : "-");
-            nextText.text = "Siguiente: " + (nextBook != null ? nextBook.titulo : "-");
-
+            // Otros libros
             if (currentBook.otrosLibros != null && currentBook.otrosLibros.Count > 0)
             {
                 List<string> otrosTitulos = new List<string>();
@@ -79,13 +134,18 @@ public class BookInfoPanelManager : MonoBehaviour
                 }
 
                 if (otrosTitulos.Count > 0)
-                    otherBooksText.text = "Otros libros:\n" + string.Join("\n", otrosTitulos);
+                {
+                    otherBooksText.gameObject.SetActive(true);
+                    otherBooksText.text = "Otros Libros: " + string.Join(" ", otrosTitulos);
+                }
                 else
-                    otherBooksText.text = "Otros libros: -";
+                {
+                    otherBooksText.gameObject.SetActive(false);
+                }
             }
             else
             {
-                otherBooksText.text = "Otros libros: -";
+                otherBooksText.gameObject.SetActive(false);
             }
         }
 
@@ -95,29 +155,62 @@ public class BookInfoPanelManager : MonoBehaviour
             {
                 if (data != null)
                 {
-                    authorText.text = "Autor: " + (!string.IsNullOrEmpty(data.author) ? data.author : "No disponible");
-                    publisherText.text = "Editorial: " + (!string.IsNullOrEmpty(data.publisher) ? data.publisher : "No disponible");
-                    dateText.text = "Fecha: " + (!string.IsNullOrEmpty(data.publishedDate) ? data.publishedDate : "No disponible");
-                    categoryText.text = "Categoría: " + (!string.IsNullOrEmpty(data.category) ? data.category : "No disponible");
+                    if (!string.IsNullOrEmpty(data.author))
+                    {
+                        authorText.gameObject.SetActive(true);
+                        authorText.text = "Autor: " + data.author;
+                    }
+                    else
+                    {
+                        authorText.gameObject.SetActive(false);
+                    }
+
+                    if (!string.IsNullOrEmpty(data.publisher))
+                    {
+                        publisherText.gameObject.SetActive(true);
+                        publisherText.text = "Editorial: " + data.publisher;
+                    }
+                    else
+                    {
+                        publisherText.gameObject.SetActive(false);
+                    }
+
+                    if (!string.IsNullOrEmpty(data.publishedDate))
+                    {
+                        dateText.gameObject.SetActive(true);
+                        dateText.text = "Fecha de Publicación: " + data.publishedDate;
+                    }
+                    else
+                    {
+                        dateText.gameObject.SetActive(false);
+                    }
+
+                    if (!string.IsNullOrEmpty(data.category))
+                    {
+                        categoryText.gameObject.SetActive(true);
+                        categoryText.text = "Categoría: " + data.category;
+                    }
+                    else
+                    {
+                        categoryText.gameObject.SetActive(false);
+                    }
                 }
                 else
                 {
-                    authorText.text = "Autor: No disponible";
-                    publisherText.text = "Editorial: No disponible";
-                    dateText.text = "Fecha: No disponible";
-                    categoryText.text = "Categoría: No disponible";
+                    authorText.gameObject.SetActive(false);
+                    publisherText.gameObject.SetActive(false);
+                    dateText.gameObject.SetActive(false);
+                    categoryText.gameObject.SetActive(false);
                 }
             }));
         }
         else
         {
-            authorText.text = "Autor: No disponible";
-            publisherText.text = "Editorial: No disponible";
-            dateText.text = "Fecha: No disponible";
-            categoryText.text = "Categoría: No disponible";
+            authorText.gameObject.SetActive(false);
+            publisherText.gameObject.SetActive(false);
+            dateText.gameObject.SetActive(false);
+            categoryText.gameObject.SetActive(false);
         }
-
-        infoPanel.SetActive(true);
     }
 
     public void CloseInfoPanel()
