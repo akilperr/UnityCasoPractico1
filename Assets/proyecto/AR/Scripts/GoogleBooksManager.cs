@@ -7,7 +7,6 @@ public class GoogleBooksManager : MonoBehaviour
 {
     [Header("Tu API Key de Google Books")]
     public string apiKey = ApiKeys.GOOGLE_BOOKS;
-    
     [Serializable]
     public class GoogleBookExtraData
     {
@@ -49,7 +48,8 @@ public class GoogleBooksManager : MonoBehaviour
 
                 if (response != null && response.items != null && response.items.Length > 0)
                 {
-                    GoogleVolumeInfo info = response.items[0].volumeInfo;
+                    GoogleBookItem item = response.items[0];
+                    GoogleVolumeInfo info = item.volumeInfo;
 
                     if (info != null)
                     {
