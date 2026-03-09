@@ -12,9 +12,11 @@
       "tipoSaga": "saga",
       "sagaTerminada": false,
       "numeroEnSaga": 1,
-      "totalLibrosSaga": null,
+      "totalLibrosSaga": 3,
       "libroAnteriorId": null,
-      "libroSiguienteId": "alas_de_hierro"
+      "libroSiguienteId": "alas_de_hierro",
+      "otrosLibros": ["alas_de_onix"],
+      "googleBooksISBN": ["9788408279990"]
     },
     {
       "bookId": "alas_de_hierro",
@@ -28,9 +30,11 @@
       "tipoSaga": "saga",
       "sagaTerminada": false,
       "numeroEnSaga": 2,
-      "totalLibrosSaga": null,
+      "totalLibrosSaga": 3,
       "libroAnteriorId": "alas_de_sangre",
-      "libroSiguienteId": "alas_de_onix"
+      "libroSiguienteId": "alas_de_onix",
+      "otrosLibros": null,
+      "googleBooksISBN": ["9788408284550"]
     },
     {
       "bookId": "alas_de_onix",
@@ -44,9 +48,11 @@
       "tipoSaga": "saga",
       "sagaTerminada": false,
       "numeroEnSaga": 3,
-      "totalLibrosSaga": null,
+      "totalLibrosSaga": 3,
       "libroAnteriorId": "alas_de_hierro",
-      "libroSiguienteId": null
+      "libroSiguienteId": null,
+      "otrosLibros": ["alas_de_sangre"],
+      "googleBooksISBN": ["9788408297079"]
     },
     {
       "bookId": "asistente_del_villano",
@@ -60,9 +66,11 @@
       "tipoSaga": "saga",
       "sagaTerminada": false,
       "numeroEnSaga": 1,
-      "totalLibrosSaga": null,
+      "totalLibrosSaga": 3,
       "libroAnteriorId": null,
-      "libroSiguienteId": "aprendiz_del_villano"
+      "libroSiguienteId": "aprendiz_del_villano",
+      "otrosLibros": ["aliada_del_villano"],
+      "googleBooksISBN": ["9788419988003"]
     },
     {
       "bookId": "aprendiz_del_villano",
@@ -76,9 +84,11 @@
       "tipoSaga": "saga",
       "sagaTerminada": false,
       "numeroEnSaga": 2,
-      "totalLibrosSaga": null,
+      "totalLibrosSaga": 3,
       "libroAnteriorId": "asistente_del_villano",
-      "libroSiguienteId": "aliada_del_villano"
+      "libroSiguienteId": "aliada_del_villano",
+      "otrosLibros": null,
+      "googleBooksISBN": ["9791387739263"]
     },
     {
       "bookId": "aliada_del_villano",
@@ -92,9 +102,11 @@
       "tipoSaga": "saga",
       "sagaTerminada": false,
       "numeroEnSaga": 3,
-      "totalLibrosSaga": null,
+      "totalLibrosSaga": 3,
       "libroAnteriorId": "aprendiz_del_villano",
-      "libroSiguienteId": null
+      "libroSiguienteId": null,
+      "otrosLibros": ["asistente del villano"],
+      "googleBooksISBN": ["9788419988539"]
     },
     {
       "bookId": "quicksilver",
@@ -108,9 +120,11 @@
       "tipoSaga": "saga",
       "sagaTerminada": false,
       "numeroEnSaga": 1,
-      "totalLibrosSaga": null,
+      "totalLibrosSaga": 2,
       "libroAnteriorId": null,
-      "libroSiguienteId": "brimstone"
+      "libroSiguienteId": "brimstone",
+      "otrosLibros": null,
+      "googleBooksISBN": ["9788419988522"]
     },
     {
       "bookId": "brimstone",
@@ -124,9 +138,11 @@
       "tipoSaga": "saga",
       "sagaTerminada": false,
       "numeroEnSaga": 2,
-      "totalLibrosSaga": null,
+      "totalLibrosSaga": 2,
       "libroAnteriorId": "quicksilver",
-      "libroSiguienteId": null
+      "libroSiguienteId": null,
+      "otrosLibros": null,
+      "googleBooksISBN": ["9788419988898"]
     },
     {
       "bookId": "yumi_y_el_pintor_de_pesadillas",
@@ -142,7 +158,9 @@
       "numeroEnSaga": null,
       "totalLibrosSaga": null,
       "libroAnteriorId": null,
-      "libroSiguienteId": null
+      "libroSiguienteId": null,
+      "otrosLibros": null,
+      "googleBooksISBN": ["9788419260024"]
     },
     {
       "bookId": "el_principe_cruel",
@@ -158,7 +176,9 @@
       "numeroEnSaga": 1,
       "totalLibrosSaga": 3,
       "libroAnteriorId": null,
-      "libroSiguienteId": "el_rey_malvado"
+      "libroSiguienteId": "el_rey_malvado",
+      "otrosLibros": ["la_reina_de_nada"],
+      "googleBooksISBN": ["9791387711443", "9788417390617"]
     },
     {
       "bookId": "el_rey_malvado",
@@ -174,7 +194,9 @@
       "numeroEnSaga": 2,
       "totalLibrosSaga": 3,
       "libroAnteriorId": "el_principe_cruel",
-      "libroSiguienteId": "la_reina_de_nada"
+      "libroSiguienteId": "la_reina_de_nada",
+      "otrosLibros": null,
+      "googleBooksISBN": ["9788417390624", "9791387711450"]
     },
     {
       "bookId": "la_reina_de_nada",
@@ -190,7 +212,9 @@
       "numeroEnSaga": 3,
       "totalLibrosSaga": 3,
       "libroAnteriorId": "el_rey_malvado",
-      "libroSiguienteId": null
+      "libroSiguienteId": null,
+      "otrosLibros": ["el_principe_cruel"],
+      "googleBooksISBN": ["9788417390631", "9791387711467"]
     }
   ]
 }

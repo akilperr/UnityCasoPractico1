@@ -18,6 +18,9 @@ public class BookData
     public int totalLibrosSaga;
     public string libroAnteriorId;
     public string libroSiguienteId;
+    public List<string> otrosLibros;
+
+    public List<string> googleBooksISBN;
 }
 
 [System.Serializable]

@@ -298,4 +298,6 @@ public class BookTopicSpawner : MonoBehaviour
 
         return BookDataLoader.database.books.Find(b => b.bookId == bookId);
     }
+
+    
 }
