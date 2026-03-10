@@ -6,8 +6,8 @@ using TMPro;
 public class PhotoCaptureManager : MonoBehaviour
 {
     [Header("UI que NO quieres que salga en la foto")]
-    public GameObject captureButton;
-    public GameObject infoButton;
+    public GameObject CaptureButton;
+    public GameObject InfoButton;
 
     [Header("Texto opcional de feedback")]
     public TMP_Text feedbackText;
@@ -19,13 +19,15 @@ public class PhotoCaptureManager : MonoBehaviour
 
     private IEnumerator CaptureAndSave()
     {
-        // Ocultamos solo los botones, no el panel de info
-        if (captureButton != null)
-            captureButton.SetActive(false);
+        // Ocultar botones
+        if (CaptureButton != null)
+            CaptureButton.SetActive(false);
 
-        if (infoButton != null)
-            infoButton.SetActive(false);
+        if (InfoButton != null)
+            InfoButton.SetActive(false);
 
+        // Esperar a que Unity refresque la UI
+        yield return null;
         yield return new WaitForEndOfFrame();
 
         Texture2D screenImage = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
@@ -48,12 +50,12 @@ public class PhotoCaptureManager : MonoBehaviour
 
         Destroy(screenImage);
 
-        // Volvemos a mostrar los botones
-        if (captureButton != null)
-            captureButton.SetActive(true);
+        // Volver a mostrar botones
+        if (CaptureButton != null)
+            CaptureButton.SetActive(true);
 
-        if (infoButton != null)
-            infoButton.SetActive(true);
+        if (InfoButton != null)
+            InfoButton.SetActive(true);
     }
 
     private IEnumerator HideFeedbackAfterDelay()

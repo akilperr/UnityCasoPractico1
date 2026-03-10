@@ -39,21 +39,21 @@ public class BookInfoPanelManager : MonoBehaviour
         titleText.text = currentBook.titulo ?? "Sin título";
 
         authorText.gameObject.SetActive(true);
-        authorText.text = "Autor: cargando...";
+        authorText.text = "<color=#B5B5B5>Autor:</color> cargando...";
 
         publisherText.gameObject.SetActive(true);
-        publisherText.text = "Editorial: cargando...";
+        publisherText.text = "<color=#B5B5B5>Editorial:</color> cargando...";
 
         dateText.gameObject.SetActive(true);
-        dateText.text = "Fecha: cargando...";
+        dateText.text = "<color=#B5B5B5>Fecha:</color> cargando...";
 
         categoryText.gameObject.SetActive(true);
-        categoryText.text = "Categoría: cargando...";
+        categoryText.text = "<color=#B5B5B5>Categoría:</color> cargando...";
 
         if (currentBook.esAutoconclusivo)
         {
             sagaText.gameObject.SetActive(true);
-            sagaText.text = "Tipo: Autoconclusivo";
+            sagaText.text = "<color=#B5B5B5>Tipo:</color> Autoconclusivo";
 
             typeText.gameObject.SetActive(false);
             statusText.gameObject.SetActive(false);
@@ -68,7 +68,7 @@ public class BookInfoPanelManager : MonoBehaviour
             if (!string.IsNullOrEmpty(currentBook.serie))
             {
                 sagaText.gameObject.SetActive(true);
-                sagaText.text = "Serie: " + currentBook.serie;
+                sagaText.text = "<color=#B5B5B5>Serie:</color> " + currentBook.serie;
             }
             else
             {
@@ -79,7 +79,7 @@ public class BookInfoPanelManager : MonoBehaviour
             if (!string.IsNullOrEmpty(currentBook.tipoSerie))
             {
                 typeText.gameObject.SetActive(true);
-                typeText.text = "Tipo de Serie: " + currentBook.tipoSerie;
+                typeText.text = "<color=#B5B5B5>Tipo de Serie:</color> " + currentBook.tipoSerie;
             }
             else
             {
@@ -88,18 +88,18 @@ public class BookInfoPanelManager : MonoBehaviour
 
             // Estado
             statusText.gameObject.SetActive(true);
-            statusText.text = "Estado de Publicación: " + (currentBook.serieTerminada ? "Terminada" : "No terminada");
+            statusText.text = "<color=#B5B5B5>Estado de Publicación:</color> " + (currentBook.serieTerminada ? "Terminada" : "No terminada");
 
             // Orden de lectura
             orderText.gameObject.SetActive(true);
-            orderText.text = "Orden de lectura: " + currentBook.numeroEnSerie + " de " + currentBook.totalLibrosSerie;
+            orderText.text = "<color=#B5B5B5>Orden de lectura:</color> " + currentBook.numeroEnSerie + " de " + currentBook.totalLibrosSerie;
 
             // Libro anterior
             BookData previousBook = bookTopicSpawner.GetBookById(currentBook.libroAnteriorId);
             if (previousBook != null)
             {
                 previousText.gameObject.SetActive(true);
-                previousText.text = "Libro anterior: " + previousBook.titulo;
+                previousText.text = "<color=#B5B5B5>Libro anterior:</color> " + previousBook.titulo;
             }
             else
             {
@@ -111,7 +111,7 @@ public class BookInfoPanelManager : MonoBehaviour
             if (nextBook != null)
             {
                 nextText.gameObject.SetActive(true);
-                nextText.text = "Siguiente Libro: " + nextBook.titulo;
+                nextText.text = "<color=#B5B5B5>Siguiente Libro:</color> " + nextBook.titulo;
             }
             else
             {
@@ -136,7 +136,7 @@ public class BookInfoPanelManager : MonoBehaviour
                 if (otrosTitulos.Count > 0)
                 {
                     otherBooksText.gameObject.SetActive(true);
-                    otherBooksText.text = "Otros Libros: " + string.Join(" ", otrosTitulos);
+                    otherBooksText.text = "<color=#B5B5B5>Otros Libros:</color> " + string.Join(" ", otrosTitulos);
                 }
                 else
                 {
@@ -158,8 +158,7 @@ public class BookInfoPanelManager : MonoBehaviour
                     if (!string.IsNullOrEmpty(data.author))
                     {
                         authorText.gameObject.SetActive(true);
-                        authorText.text = "Autor: " + data.author;
-                    }
+                        authorText.text = "<color=#B5B5B5>Autor:</color> " + data.author;                    }
                     else
                     {
                         authorText.gameObject.SetActive(false);
@@ -168,7 +167,7 @@ public class BookInfoPanelManager : MonoBehaviour
                     if (!string.IsNullOrEmpty(data.publisher))
                     {
                         publisherText.gameObject.SetActive(true);
-                        publisherText.text = "Editorial: " + data.publisher;
+                        publisherText.text = "<color=#B5B5B5>Editorial:</color> " + data.publisher;
                     }
                     else
                     {
@@ -178,7 +177,7 @@ public class BookInfoPanelManager : MonoBehaviour
                     if (!string.IsNullOrEmpty(data.publishedDate))
                     {
                         dateText.gameObject.SetActive(true);
-                        dateText.text = "Fecha de Publicación: " + data.publishedDate;
+                        dateText.text = "<color=#B5B5B5>Fecha de Publicación:</color> " + data.publishedDate;
                     }
                     else
                     {
@@ -188,7 +187,7 @@ public class BookInfoPanelManager : MonoBehaviour
                     if (!string.IsNullOrEmpty(data.category))
                     {
                         categoryText.gameObject.SetActive(true);
-                        categoryText.text = "Categoría: " + data.category;
+                        categoryText.text = "<color=#B5B5B5>Categoría:</color> " + data.category;
                     }
                     else
                     {
