@@ -2,7 +2,7 @@
   "books": [
     {
       "bookId": "alas_de_sangre",
-      "imageNames": ["alas_de_sangre"],
+      "imageNames": ["alas_de_sangre", "alas_de_sangre2", "alas_de_sangre3"],
       "titulo": "Alas de sangre",
       "topics": ["dragones", "academia militar", "romantasy", "enemies to lovers", "magia"],
       "labelColor": "#f0dca3",
@@ -19,7 +19,7 @@
     },
     {
       "bookId": "alas_de_hierro",
-      "imageNames": ["alas_de_hierro"],
+      "imageNames": ["alas_de_hierro", "alas_de_hierro2"],
       "titulo": "Alas de hierro",
       "topics": ["dragones", "romantasy", "guerra", "poder", "magia", "grifos"],
       "labelColor": "#8f3119",
@@ -36,7 +36,7 @@
     },
     {
       "bookId": "alas_de_onix",
-      "imageNames": ["alas_de_onix"],
+      "imageNames": ["alas_de_onix", "alas_de_onix2"],
       "titulo": "Alas de onix",
       "topics": ["dragones", "romantasy", "escuela de guerra", "magia", "política"],
       "labelColor": "#63666A",
@@ -49,7 +49,7 @@
       "libroAnteriorId": "alas_de_hierro",
       "libroSiguienteId": null,
       "otrosLibros": ["alas_de_sangre"],
-      "googleBooksISBN": ["9788408297079"]
+      "googleBooksISBN": ["9788408297444"]
     },
     {
       "bookId": "asistente_del_villano",
@@ -174,7 +174,7 @@
       "libroAnteriorId": null,
       "libroSiguienteId": "el_rey_malvado",
       "otrosLibros": ["la_reina_de_nada"],
-      "googleBooksISBN": ["9791387711443", "9788417390617"]
+      "googleBooksISBN": ["9788417390617", "9791387711443"]
     },
     {
       "bookId": "el_rey_malvado",

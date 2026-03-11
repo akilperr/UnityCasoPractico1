@@ -187,3 +187,43 @@ MonoBehaviour:
     m_SpecifySize: 1
     m_Name: aliada_del_villano
     m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5479499994160542963
+      m_GuidHigh: 13535275159944639678
+    m_SerializedTextureGuid:
+      m_GuidLow: 4387773002520924698
+      m_GuidHigh: 18347237030646063946
+    m_Size: {x: 0.155, y: 0.23632286}
+    m_SpecifySize: 1
+    m_Name: alas_de_hierro2
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5027268228477026543
+      m_GuidHigh: 13049334797910321576
+    m_SerializedTextureGuid:
+      m_GuidLow: 5120985410132999188
+      m_GuidHigh: 4239388722955734248
+    m_Size: {x: 0.155, y: 0.23766667}
+    m_SpecifySize: 1
+    m_Name: alas_de_onix2
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5527797950471428661
+      m_GuidHigh: 4745788094194210444
+    m_SerializedTextureGuid:
+      m_GuidLow: 9621587342346760669
+      m_GuidHigh: 16604416526866799145
+    m_Size: {x: 0.155, y: 0.23766084}
+    m_SpecifySize: 1
+    m_Name: alas_de_sangre2
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4643341373242880163
+      m_GuidHigh: 2282984104821928115
+    m_SerializedTextureGuid:
+      m_GuidLow: 457136441931388146
+      m_GuidHigh: 17532918680288967083
+    m_Size: {x: 0.13, y: 0.1999367}
+    m_SpecifySize: 1
+    m_Name: alas_de_sangre3
+    m_Texture: {fileID: 0}
