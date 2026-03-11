@@ -9,9 +9,6 @@ public class PhotoCaptureManager : MonoBehaviour
     public GameObject CaptureButton;
     public GameObject InfoButton;
 
-    [Header("Texto opcional de feedback")]
-    public TMP_Text feedbackText;
-
     public void CapturePhoto()
     {
         StartCoroutine(CaptureAndSave());
@@ -22,7 +19,6 @@ public class PhotoCaptureManager : MonoBehaviour
         // Ocultar botones
         if (CaptureButton != null)
             CaptureButton.SetActive(false);
-
         if (InfoButton != null)
             InfoButton.SetActive(false);
 
@@ -35,17 +31,9 @@ public class PhotoCaptureManager : MonoBehaviour
         screenImage.Apply();
 
         string fileName = "ARBook_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
-
         NativeGallery.SaveImageToGallery(screenImage, "ARBooks", fileName, (success, path) =>
         {
             Debug.Log("Guardado en galería: " + success + " | Ruta: " + path);
-
-            if (feedbackText != null)
-            {
-                feedbackText.gameObject.SetActive(true);
-                feedbackText.text = success ? "Foto guardada en galería" : "No se pudo guardar la foto";
-                StartCoroutine(HideFeedbackAfterDelay());
-            }
         });
 
         Destroy(screenImage);
@@ -53,16 +41,7 @@ public class PhotoCaptureManager : MonoBehaviour
         // Volver a mostrar botones
         if (CaptureButton != null)
             CaptureButton.SetActive(true);
-
         if (InfoButton != null)
             InfoButton.SetActive(true);
-    }
-
-    private IEnumerator HideFeedbackAfterDelay()
-    {
-        yield return new WaitForSeconds(2f);
-
-        if (feedbackText != null)
-            feedbackText.gameObject.SetActive(false);
     }
 }
