@@ -201,8 +201,8 @@ MonoBehaviour:
       m_GuidLow: 5027268228477026543
       m_GuidHigh: 13049334797910321576
     m_SerializedTextureGuid:
-      m_GuidLow: 5120985410132999188
-      m_GuidHigh: 4239388722955734248
+      m_GuidLow: 11850547150704220521
+      m_GuidHigh: 38593168168684987
     m_Size: {x: 0.155, y: 0.23766667}
     m_SpecifySize: 1
     m_Name: alas_de_onix2
@@ -211,8 +211,8 @@ MonoBehaviour:
       m_GuidLow: 5527797950471428661
       m_GuidHigh: 4745788094194210444
     m_SerializedTextureGuid:
-      m_GuidLow: 9621587342346760669
-      m_GuidHigh: 16604416526866799145
+      m_GuidLow: 12007065848754992273
+      m_GuidHigh: 650855024996235977
     m_Size: {x: 0.155, y: 0.23766084}
     m_SpecifySize: 1
     m_Name: alas_de_sangre2
