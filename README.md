@@ -78,7 +78,7 @@ Si hay varios libros visibles, el sistema prioriza el **libro más centrado en l
 
 <div align="center">
   <img src="imagenes/el rey malvado.png" width="900">
-</div>div>
+</div>
 
 
 ---
