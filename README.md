@@ -113,10 +113,6 @@ Muchos lectores utilizan los **tópicos narrativos** (dragones, faes, enemies to
 
 ---
 
-# Autor
-
-**Lucía Liu Wang**
-
-Proyecto realizado para la asignatura:
+# Proyecto realizado para la asignatura:
 
 **Sistemas Interactivos e Inmersivos – 2026**
